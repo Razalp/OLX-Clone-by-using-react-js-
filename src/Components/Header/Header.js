@@ -6,15 +6,17 @@ import Arrow from '../../assets/Arrow';
 import SellButton from '../../assets/SellButton';
 import SellButtonPlus from '../../assets/SellButtonPlus';
 import { AuthContext, FireBaseContext } from '../../store/Context';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom';
 
 function Header() {
   const { user } = useContext(AuthContext);
   const { fireBaseConfig } = useContext(FireBaseContext);
-
+  const history=useHistory()
   const handleLogout = () => {
     const confirmLogout = window.confirm("Are you sure you want to log out?");
     if (confirmLogout) {
       fireBaseConfig.auth().signOut();
+      history.push('/Login')
     }
   };
 
@@ -44,7 +46,7 @@ function Header() {
           <span> ENGLISH </span>
           <Arrow />
         </div>
-        <div className="loginPage">
+        <div className="loginPage" onClick={() => history.push('/Login')}>
           <span>welcome {user ? user.displayName : 'Login'}</span>
           <hr />
         </div>
@@ -54,10 +56,10 @@ function Header() {
           </span>
         )}
         <div className="sellMenu">
-          <SellButton />
+          <SellButton  />
           <div className="sellMenuContent">
             <SellButtonPlus />
-            <span>SELL</span>
+            <span onClick={()=>history.push('/create')}>SELL</span>
           </div>
         </div>
       </div>

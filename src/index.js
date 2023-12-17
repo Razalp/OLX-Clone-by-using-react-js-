@@ -9,6 +9,7 @@ ReactDOM.render(
     <FireBaseContext.Provider value={{fireBaseConfig}}>
 <Context>
       <App />
+     
     </Context>
 </FireBaseContext.Provider>
  ,document.getElementById('root'));

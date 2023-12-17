@@ -1,7 +1,8 @@
 import firebase from 'firebase';
 import 'firebase/auth'
 import 'firebase/firestore'
-
+import 'firebase/storage'
+import {FireBaseContext,AuthContext} from '../store/Context'
 const firebaseConfig = {
   apiKey: "AIzaSyB668iClZeiu1X8igC2Dwk_R50I1kYUSmc",
   authDomain: "login-and-sign-up-7118e.firebaseapp.com",
