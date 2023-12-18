@@ -7,7 +7,8 @@ import Login from './Components/Login/Login';
 import { AuthContext, FireBaseContext } from './store/Context';
 import fireBaseConfig from './store/fireBaseConfig';
 import Create from './Pages/Create'
-
+import View from './Components/View/View';
+import Post from './store/postContext';
 function App() {
   const {user,setUser}=useContext(AuthContext)
   const {fireBaseConfig} = useContext(FireBaseContext)
@@ -23,6 +24,7 @@ function App() {
         <Route path='/' element={<Home/>} /> 
         <Route path='/signUp' element={<Signup/>}/>
         </Routes> */}
+        <Post>
       <Router>
         <Route path="/" exact>
           <Home />
@@ -36,7 +38,11 @@ function App() {
         <Route path="/create" exact>
           <Create />
         </Route>
+        <Route path="/view" exact>
+          <View />
+        </Route>
       </Router>
+      </Post>
     </div>
   );
 }
