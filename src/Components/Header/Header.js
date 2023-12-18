@@ -12,6 +12,10 @@ function Header() {
   const { user } = useContext(AuthContext);
   const { fireBaseConfig } = useContext(FireBaseContext);
   const history=useHistory()
+
+  
+
+
   const handleLogout = () => {
     const confirmLogout = window.confirm("Are you sure you want to log out?");
     if (confirmLogout) {
