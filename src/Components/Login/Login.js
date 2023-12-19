@@ -14,10 +14,10 @@ function Login() {
 
     try {
       await fireBaseConfig.auth().signInWithEmailAndPassword(email, password);
-      history.push('/'); 
+      history.push('/');
     } catch (error) {
       console.error('Error logging in:', error.message);
-   
+      window.alert('Invalid email or password. Please try again.');
     }
   };
 
@@ -58,3 +58,4 @@ function Login() {
 }
 
 export default Login;
+  
