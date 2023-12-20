@@ -17,7 +17,7 @@ function Header() {
 
 
   const handleLogout = () => {
-    const confirmLogout = window.confirm("Are you sure you want to log out?");
+    const confirmLogout = window.confirm("Are you sure you want to log out ?");
     if (confirmLogout) {
       fireBaseConfig.auth().signOut();
       history.push('/Login')

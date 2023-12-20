@@ -46,7 +46,7 @@ function Footer() {
         </div>
       </div>
       <div className="footer">
-        <p>Other Countries Pakistan - South Africa - Indonesia</p>
+        <p>NOTHING HAPPENDS </p>
         <p>Free Classifieds in India. © 2006-2021 OLX</p>
       </div>
     </div>
