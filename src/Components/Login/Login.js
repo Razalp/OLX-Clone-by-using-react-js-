@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import fireBaseConfig from '../../store/fireBaseConfig'; // Replace with your Firebase configuration
 import Logo from '../../olx-logo.png';
 import './Login.css';
-
+import { Toaster, toast } from 'react-hot-toast';
 function Login() {
   const history = useHistory();
   const [email, setEmail] = useState('');
@@ -17,12 +17,13 @@ function Login() {
       history.push('/');
     } catch (error) {
       console.error('Error logging in:', error.message);
-      window.alert('Invalid email or password. Please try again.');
+      toast.error('Invalid email or password. Please try again.');
     }
   };
 
   return (
     <div>
+      <Toaster/>
       <div className="loginParentDiv">
         <img width="200px" height="200px" src={Logo} alt="OLX Logo" />
         <form onSubmit={handleLogin}>

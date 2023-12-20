@@ -4,7 +4,7 @@ import Logo from '../../olx-logo.png';
 import './Signup.css';
 import fireBaseConfig from '../../store/fireBaseConfig';
 import { useHistory } from 'react-router-dom';
-
+import { Toaster, toast } from 'react-hot-toast';
 export default function Signup() {
   const history = useHistory();
   const [username, setUserName] = useState('');
@@ -72,11 +72,13 @@ export default function Signup() {
 
   const handleError = (errorMessage) => {
     setError(errorMessage);
-    window.alert(errorMessage);
+    toast.error(errorMessage);
+  
   };
 
   return (
     <div>
+    <Toaster/>
       <div className="signupParentDiv">
         <img width="200px" height="200px" src={Logo} alt="OLX Logo" />
         <form onSubmit={handleSubmit}>
