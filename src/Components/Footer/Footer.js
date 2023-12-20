@@ -47,7 +47,7 @@ function Footer() {
       </div>
       <div className="footer">
         <p>NOTHING HAPPENDS </p>
-        <p>Free Classifieds in India. © 2006-2021 OLX</p>
+        <p>Free Classifieds in India. © 2006-2027 OLX</p>
       </div>
     </div>
   );
